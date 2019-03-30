@@ -1,0 +1,152 @@
+body {
+	background-color: #c6c7c7;
+}
+
+/* example 1 */
+.container{
+	max-width: 1300px;
+	padding: 20px 50px;
+	margin: 40px auto 0 auto;
+	background-color: #FFF;
+}
+.form-row{
+	padding: 10px 0;
+	display: flex;
+}
+
+.form-row label{
+	padding-right: 10px;
+}
+
+.form-row input {
+	flex: 1;
+}
+
+/* example 2 */
+.column-layout{
+	max-width: 1300px;
+	background-color: #FFF;
+	margin: 40px auto 0 auto;
+	line-height: 1.65;
+	padding: 20px 50px;
+	display: flex;
+}
+
+.main-colume{
+	/* flex: 3; */ /* width is three times bigger than sidebar one and two. */
+	flex: 1; 	/* width is same the sidebar one and two. */
+	order: 2;
+}
+
+.sidebar-one{
+	flex: 1;
+	order: 1;
+}
+
+.sidebar-two{
+	flex: 1;
+	order: 3
+}
+
+/* example 3 */
+.call-outs-container{
+	max-width: 1400px;
+	margin: 40px auto 0 auto;
+	
+	
+	/*align-items: flex-start;*/ /* by default the call-out elements height is all the same. This css setting make each height different depend on the content */
+	/*align-items: flex-end;*/ /* the line in the bottom */
+	/*align-items: center;*/ /* the line in the center */
+	
+	/* in order to make the call-out elements vertical in mobile screen. move the css lines below to @media(min-width: 900px)*/
+	/*display: flex;*/
+	/* adding the margin to it. */
+	/* justify-content: space-between; */
+}
+@media(min-width: 900px) {
+	.call-outs-container{
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.call-out{
+	padding: 20px;
+	margin-bottom: 20px;
+	/* adding the margin to it. change flex: 1 to flex-basis: 30% */
+	flex-basis: 30%;
+	/* adding the margin to it */
+	box-sizing: border-box;
+}
+
+.call-out:nth-child(1) {background-color: #c0dbe2}
+.call-out:nth-child(2) {background-color: #cdf1c3}
+.call-out:nth-child(3) {background-color: #ccb3da}
+
+
+/* example 4 */
+.fix-size-container{
+	max-width: 1400px;
+	margin: 40px auto 0 auto;
+	background-color: #FFF;
+	padding: 30px 0;
+	display: flex;
+	align-items: center;  /*make the elements vertical center in the flex dev, */
+	justify-content: space-around; /*make the space around elements in the flex dev*/
+	flex-wrap: wrap;
+}
+
+.fixed-size{
+	width: 150px;
+	height: 100px;
+	background-color: #900b47;
+	color: #FFF;
+	line-height: 100px;
+	text-align: center;
+	font-size: 60px;
+	margin-bottom: 20px;
+}
+
+/* example 5 */
+.banner{
+	height: 400px;
+	max-width: 700px;
+	margin: 40px auto 40px auto;
+	background-color: #2a2a2a;
+	display: flex; /* for centering the chile element vertical and horizontal using flex */
+}
+
+.center-me{
+	color: #FFF;
+	font-size: 50px;
+	margin: auto; /* just add margin auto in the flex box to center the div element */
+}
+
+/* example 6 */
+.equal-height-container{
+	max-width: 900px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.first{
+	background-color: #FFF;
+	flex: 1;
+}
+
+.second{
+	background-color: yellow;
+	flex: 1;
+	display: flex; /* nestting the flex box in a flex-box div. */
+	flex-direction: column; /*change the child direction to vertical(column). the default value is horizontal(row) */
+}
+
+.second-a{
+	background-color: #bfd6da;
+	flex: 1;
+}
+
+.second-b{
+	background-color: #b7b7d2;
+	flex: 1;
+}
